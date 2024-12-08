@@ -22,9 +22,9 @@ function Board({ xIsNext, squares, onPlay }) {
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
-    status = "Winner: " + winner;
+    status = "胜者: " + winner;
   } else {
-    status = "Next player: " + (xIsNext ? "X" : "O");
+    status = "接下来的出棋人: " + (xIsNext ? "X" : "O");
   }
 
   function handleClick(i) {
@@ -150,9 +150,9 @@ export default function Game() {
   const moves = history.map((squares, move) => {
     let description;
     if (move > 0) {
-      description = 'Go to move #' + move;
+      description = '落子 #' + move;
     } else {
-      description = 'Go to game start';
+      description = '最开始';
     }
     return (
       <li key={move}>
